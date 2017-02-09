@@ -4,7 +4,7 @@ from pyspark.sql import SQLContext
 
 if __name__ == "__main__":
 
-    sparkConf = SparkConf().setMaster("yarn-client").setAppName("MongoSparkConnectorTour").set("spark.app.id", "MongoSparkConnectorTour")
+    sparkConf = SparkConf().setMaster("local").setAppName("MongoSparkConnectorTour").set("spark.app.id", "MongoSparkConnectorTour")
     sc = SparkContext(conf=sparkConf)
     sqlContext = SQLContext(sc)
 
