@@ -19,14 +19,14 @@ if __name__ == "__main__":
     # the original write config was as follows:
     #characters.write.format("com.mongodb.spark.sql").mode("overwrite").save()
     
-    characters.write.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.output.uri","mongodb://dylan:abrams@apsrd6777.uhc.com:27017/admin").option("spark.mongodb.output.database","sandbox").option("spark.mongodb.output.collection","pythontest").mode("overwrite").save()
+    characters.write.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.output.uri","mongodb://admin:password@10.106.172.42:14606/ois").option("spark.mongodb.output.database","ois").option("spark.mongodb.output.collection","sparkConnectorTest").mode("overwrite").save()
 
 
     # Load the data
     #the original read config was as follows:
     #df = sqlContext.read.format("com.mongodb.spark.sql").load()
     
-    df = sqlContext.read.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.input.uri","mongodb://dylan:abrams@apsrd6777.uhc.com:27017/admin").option("spark.mongodb.input.database","sandbox").option("spark.mongodb.input.collection","pythontest").load()
+    df = sqlContext.read.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.input.uri","mongodb://admin:password@10.106.172.42:14606/ois").option("spark.mongodb.input.database","ois").option("spark.mongodb.input.collection","sparkConnectorTest").load()
     
     print("Schema:")
     df.printSchema()
