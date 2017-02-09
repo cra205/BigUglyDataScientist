@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     # Load the data
     #df = sqlContext.read.format("com.mongodb.spark.sql").load()
-    df = sqlContext.read.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.input.uri","mongodb://dylan:admin:password@10.106.172.42:14606/ois").option("spark.mongodb.input.database","ois").option("spark.mongodb.input.collection","SparkConnectorTest").load()
+    df = sqlContext.read.format("com.mongodb.spark.sql.DefaultSource").option("spark.mongodb.input.uri","mongodb://dylan:admin:password@10.106.172.42:14606/ois").option("spark.mongodb.input.database","ois").option("spark.mongodb.input.collection","sparkConnectorTest").load()
     
     print("Schema:")
     df.printSchema()
